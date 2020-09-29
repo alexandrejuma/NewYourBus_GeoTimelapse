@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block loadLibrary %}
+
+<!-- Load Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+
+<!-- Load Leaflet heatmap from CDN --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+
+{% endblock %}
+
+{% block pagestyles %}
+
+<!-- Our own styles -->
+<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+
+<!-- Slider -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/GeoVisualization_SliderStyle.css') }}">
+
+{% endblock %}
+
+<!-- Header -->
+
+{% block header %}
+
+Bus GeoVisualization
+
+{% endblock %}
+
+<!-- Content Inside body -->
+
+{% block content %}
+
+<!-- Create div where slider will be created with javascript and a play-button to play the slider animation -->
+<div id="vis">
+    <button id="play-button">Play</button>
+    <input type="checkbox" id="isToShowBusIcons">
+    <label for="isToShowBusIcons"> Want to see the BUS destination Icons</label>
+</div>
+
+<!-- Create an element where the map will take place -->
+<div id="mapid"></div>
+
+<style>
+    #mapid { height: 500px; }
+</style>
+
+{% endblock %}
+
+<!-- Scripts -->
+
+{% block script %}
+
+<!-- Load all the Javascript code for this GeoVisualization -->
+<script src="{{ url_for('static', filename='js/bus/GeoVisualization.js') }}"></script>
+<script> drawHeatMap({{ data | safe }}); </script>
+
+{% endblock %}

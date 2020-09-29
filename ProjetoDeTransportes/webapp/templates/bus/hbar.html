@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pagestyles %}
+
+<!-- Our own styles -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Horizontalbar.css') }}">
+<!-- imported library  for timeseries-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.4/nv.d3.min.css">
+{% endblock %}
+{% block script %}
+
+<!-- Load all the Javascript code for this GeoVisualization -->
+<script src="{{ url_for('static', filename='js/bus/Horizontalbar.js') }}"></script>
+
+<script>
+    mydraw({{ viz1data | safe }})  
+  </script>
+ {% endblock %}
+
+{% block header %}
+Bus - Horizontal bar chart
+{% endblock %}
+<!-- Content Inside body -->
+{% block content %}
+<style>
+  .horizontal-bar-graph {
+  display: table;
+  width: 100%;
+}
+
+.horizontal-bar-graph-segment {
+  display: table-row;
+}
+
+.horizontal-bar-graph-label {
+  display: table-cell;
+  border-right: 1px solid silver;
+  text-align: right;
+  padding: 4px 10px 4px 0;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.horizontal-bar-graph-value {
+  display: table-cell;
+  padding: 3px 0;
+  vertical-align: baseline;
+  width: 100%;
+}
+
+.horizontal-bar-graph-value-bar {
+  background: silver;
+  -moz-box-sizing: padding-box;
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  padding: 4px 4px 3px;
+  height: 40px;
+  text-align: right;
+  color: white;
+  overflow: visible;
+  display: inline-block;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+}
+
+.horizontal-bar-graph-segment:first-child .horizontal-bar-graph-label {
+  padding-top: 12px;
+}
+.horizontal-bar-graph-segment:first-child .horizontal-bar-graph-value {
+  padding-top: 11px;
+}
+
+.horizontal-bar-graph-segment:last-child .horizontal-bar-graph-label {
+  padding-bottom: 12px;
+}
+.horizontal-bar-graph-segment:last-child .horizontal-bar-graph-value {
+  padding-bottom: 11px;
+}  
+</style>
+
+<div class="container">
+    <div class="horizontal-bar-graph" id="graph"></div>
+  </div>
+
+  <div ng-app="nvd3_timeseries">
+    <div ng-controller="demo">
+      <nvd3 options="options" data="data"></nvd3>
+    </div>
+    </div>
+
+<style>
+    #mapid {
+        height: 400px;
+    }
+</style>
+
+{% endblock %}
+
+
+

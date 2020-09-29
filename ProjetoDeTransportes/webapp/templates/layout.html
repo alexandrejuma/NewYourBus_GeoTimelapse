@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>{{title}}</title>
+  <!-- Copied from https://www.w3schools.com/bootstrap4/bootstrap_templates.asp -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  {% block loadLibrary %}
+  {% endblock %}
+  {% block pagestyles %}
+  {% endblock %}
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body class="{{template}}">
+
+    <!-- Header -->
+    <header class="jumbotron text-center" style="margin-bottom:0">
+        <h2>Big Data Visualization</h2>
+        <h5>{% block header %}{% endblock %}</h5>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/geovisualization">Geovisualization</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/viz1_hbarchart/10">Bar Chart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/viz1_timeseries/0/9999999999">Time Series</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/scatterplot/1">Scatter Plot</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4 fixed-bottom position-relative">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mt-md-0 mt-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase">VBD Project 2020</h5>
+                    <p>Showcasing the usage of Docker, Spark, Flask, D3, CSS, Bootstrap, HTML</p>
+                    <br />
+                    <img src="/static/img/iscte.png" height="87" width="145">
+
+                </div>
+
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                    <!-- Links -->
+                    <h5 class="text-uppercase">The gang</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Alexandre Juma</a>
+                        </li>
+                        <li>
+                            <a href="#!">Alexandre Mendes</a>
+                        </li>
+                        <li>
+                            <a href="#!">Celso Pereira</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+          </div>
+    </footer>
+    <!-- Footer -->
+</body>
+
+{% block script %}
+{% endblock %}
+
+
+</html>

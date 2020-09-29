@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pagestyles %}
+
+<!-- Our own styles -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Horizontalbar.css') }}">
+<!-- imported library  for timeseries-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.4/nv.d3.min.css">
+{% endblock %}
+
+<!-- Header -->
+{% block header %}
+
+Bus - Timeseries line chart
+
+{% endblock %}
+<!-- Content Inside body -->
+{% block content %}
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+<!-- Footer  -->
+<style>
+    .myCircle:hover {
+      stroke: black;
+    }
+</style>
+
+{% endblock %}
+
+{% block script %}
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="{{ url_for('static', filename='js/bus/Timeseries.js') }}"></script>
+
+<script>
+    mydraw({{ viz1data | safe }})  
+  </script>
+{% endblock %}

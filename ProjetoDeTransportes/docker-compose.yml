@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  webapp:
+    build:
+      context: webapp
+      dockerfile: Dockerfile
+    ports:
+        - "5000:5000"
+    volumes: 
+        - ./datasource:/home/bdvapp/webapp/datasource/
+
+    command: bash /home/bdvapp/webapp/start.sh
+
+   # and we can add more services e.g. database, etc.
+  
+  # volumes:
+  # - <host dir>:<container dir>
+  # creates <host dir> in the local host, if it doesn't exist already
+  # then mounts its content in the container, in the specified <container dir>
+  # Hence we can pass data from host's file system to container's file system.
+  # (notice previous data in <container id> will be inaccessible)
+  

@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pagestyles %}
+
+<!-- Our own styles -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+<!-- Slider -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/GeoVisualization_SliderStyle.css') }}">
+
+{% endblock %}
+
+<!-- Header -->
+{% block header %}
+
+Correlation analysis of number of records to average delay
+
+{% endblock %}
+
+{% block content %}
+
+<div id="scatterplot"></div>
+
+{% endblock %}
+
+<!-- Scripts -->
+{% block script %}
+
+<!-- Load all the Javascript code for this GeoVisualization -->
+<script src="{{ url_for('static', filename='js/bus/ScatterPlotVisualization.js') }}"></script>
+
+<script>
+    console.log("Hello world from hbar.html!");
+    console.log({{ data | safe }});
+    drawScatterPlot({{ data | safe }});
+</script>
+{% endblock %}
