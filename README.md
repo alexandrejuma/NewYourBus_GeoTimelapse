@@ -35,7 +35,7 @@ The physical environment:
 
 ## So what does this do?
 
-![alt text](https://github.com/alexandrejuma/VBD_DockerProject/blob/master/front_page.PNG "Front page of the application")
+![alt text](https://github.com/alexandrejuma/NewYourBus_GeoTimelapse/blob/master/front_page.PNG "Front page of the application")
 
 You can plot:
  1. A horizontal bar chart depicting the TopN stops with higher average delay. 
@@ -44,4 +44,4 @@ You can plot:
  
  Additionally, you have an interactive geographic heatmap time-lapse of the Bus delays in New York City over the course of 1 month in 1-hour slides. There’s a Pause/Play button to control the time-lapse. There’s also a check box to enable/disable the custom markers where on-hover additional details about the original data points used to compute the heatmap density model. These tooltips are triggered on-hover.
  
- ![alt text](https://github.com/alexandrejuma/VBD_DockerProject/blob/master/geo_timelapse.PNG "Geo Timelapse of Bus delays")
+ ![alt text](https://github.com/alexandrejuma/NewYourBus_GeoTimelapse/blob/master/geo_timelapse.PNG "Geo Timelapse of Bus delays")
