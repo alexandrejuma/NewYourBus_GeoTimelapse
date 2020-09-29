@@ -4,6 +4,23 @@
 **Author**: Alexandre Juma, Alexandre Mendes, Celso Teixeira
 **Date**: 05/06/2020
 
+## So what does this do?
+
+![alt text](https://github.com/alexandrejuma/NewYourBus_GeoTimelapse/blob/master/front_page.PNG "Front page of the application")
+
+You can plot:
+ 1. A horizontal bar chart depicting the TopN stops with higher average delay. 
+ 2. A Time-series depicting average delay per hour of day in the entire Bus Network.
+ 3. Ccatterplot depicting the correlation between the average delay of the aggregated data point and the count of aggregated records that contributed to it
+ 
+Features of the Geo Timelapse:
+ 1. Interactive geographic heatmap time-lapse of the Bus delays in New York City over the course of 1 month in 1-hour slides. 
+ 2. There’s a Pause/Play button to control the time-lapse. 
+ 3. There’s also a check box to enable/disable the custom markers where on-hover additional details about the original data points used to compute the heatmap density model. 
+ 4. These tooltips are triggered on-hover.
+ 
+ ![alt text](https://github.com/alexandrejuma/NewYourBus_GeoTimelapse/blob/master/geo_timelapse.PNG "Geo Timelapse of Bus delays")
+
 ## How to run
 
 `$ git clone https://github.com/afcms1111-iscteiul/VBD_DockerProject.git`
@@ -32,16 +49,3 @@ The physical environment:
  1. Build docker image from scratch: ~2m (including fetches) 
  2. Run already built docker image: ~5s 
  3. Compute and cache the aggregated model with full raw data:~10m
-
-## So what does this do?
-
-![alt text](https://github.com/alexandrejuma/NewYourBus_GeoTimelapse/blob/master/front_page.PNG "Front page of the application")
-
-You can plot:
- 1. A horizontal bar chart depicting the TopN stops with higher average delay. 
- 2. A Time-series depicting average delay per hour of day in the entire Bus Network.
- 3. Ccatterplot depicting the correlation between the average delay of the aggregated data point and the count of aggregated records that contributed to it
- 
- Additionally, you have an interactive geographic heatmap time-lapse of the Bus delays in New York City over the course of 1 month in 1-hour slides. There’s a Pause/Play button to control the time-lapse. There’s also a check box to enable/disable the custom markers where on-hover additional details about the original data points used to compute the heatmap density model. These tooltips are triggered on-hover.
- 
- ![alt text](https://github.com/alexandrejuma/NewYourBus_GeoTimelapse/blob/master/geo_timelapse.PNG "Geo Timelapse of Bus delays")
